@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -14,9 +14,9 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl">Shellhacks 2023 Authentication Project</strong>
 			</svelte:fragment>
-			<svelte:fragment slot="trail">
+			<!--<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://discord.gg/EXqV7W8MtY"
@@ -41,7 +41,18 @@
 				>
 					GitHub
 				</a>
-			</svelte:fragment>
+			</svelte:fragment> -->
+			<svelte:fragment slot="trail">
+				<LightSwitch />
+
+				<p>Hello Ty!</p>
+				<Avatar
+					class="avatar w-8 h-8"
+					src="https://avatars.githubusercontent.com/u/8199998?v=4"
+					alt="User Avatar"
+					on:click={() => href('/profile')}
+				/>	
+			</svelte:fragment>		
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
