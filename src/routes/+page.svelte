@@ -1,4 +1,7 @@
 <script>
+	import { goto } from "$app/navigation";
+	import { fade } from "svelte/transition";
+
 </script>
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
@@ -24,7 +27,7 @@
 		<div class="flex justify-end space-x-2">
 			<a
 				class="btn variant-filled"
-				href="/tutorial"
+				on:click={() => goto('/tutorial')}
 				target="_blank"
 				rel="noreferrer"
 			>
@@ -40,7 +43,7 @@
 		</div> -->
 	</div>
 	<div class="m-10">
-		<figure>
+		<figure in:fade>
 			<section class="img-bg" />
 			<svg
 				class="fill-token"
