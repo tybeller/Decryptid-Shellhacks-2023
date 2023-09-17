@@ -16,7 +16,15 @@
 				<strong class="text-xl"></strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<LightSwitch />
+			<a
+				class="btn btn-sm variant-ghost-primary"
+				href="https://github.com/tybeller/Decryptid-Shellhacks-2023/"
+				target="_blank"
+				rel="noreferrer"
+			>
+				GitHub
+			</a>	
+			<LightSwitch />
 
 				<!-- <button type="button" on:click={() => window.location.href='https://github.com/tybeller/Decryptid-Shellhacks-2023/'} class="btn-sm btn-icon variant-filled">
 					<img src="/github-mark.svg" alt="GitHub Logo" />
