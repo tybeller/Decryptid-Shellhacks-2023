@@ -3,7 +3,6 @@ import type { Config } from 'tailwindcss'
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin'
-import { customTheme } from './customtheme';
 
 export default {
 	darkMode: 'class',
@@ -16,16 +15,14 @@ export default {
 		typography,
 		skeleton({
 			themes: {
-				custom: [
-					customTheme
-				]
-				//preset: [
-				//	{
-				//		name: 'skeleton',
-				//		enhancements: true,
-				//	},
-				//],
+				preset: [
+					{
+						name: 'seafoam',
+						enhancements: true,
+					},
+				],
 			},
 		}),
+
 	],
 } satisfies Config;
