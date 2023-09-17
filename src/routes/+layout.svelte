@@ -17,7 +17,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl">Shellhacks 2023 Authentication Project</strong>
+				<strong class="text-xl">Decryptid</strong>
 			</svelte:fragment>
 			<!--<svelte:fragment slot="trail">
 				<a
