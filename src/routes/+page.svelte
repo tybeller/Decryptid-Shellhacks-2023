@@ -1,5 +1,4 @@
 <script>
-	import { goto } from "$app/navigation";
 	import { fade } from "svelte/transition";
 	import Key from "../lib/encryption-icon.svg"
 
@@ -8,7 +7,7 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2">Learn about cryptography</h2>
+		<h2 class="h2">decryptid!</h2>
 		<!-- Animated Logo -->
 		<!--<figure>
 			<section class="img-bg" />
@@ -28,20 +27,13 @@
 		<div class="flex justify-end space-x-2">
 			<a
 				class="btn variant-filled"
-				on:click={() => goto('/tutorial')}
-				target="_blank"
+				href="/tutorial"
 				rel="noreferrer"
 			>
 				Get Started
 			</a>
 		</div>
-		
 
-		<!--<div class="space-y-2">
-			<p>Try editing the following:</p>
-			<p><code class="code">/src/routes/+layout.svelte</code></p>
-			<p><code class="code">/src/routes/+page.svelte</code></p>
-		</div> -->
 	</div>
 	<div class="m-10">
 		<figure in:fade>
