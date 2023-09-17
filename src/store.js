@@ -5,14 +5,14 @@ export const user = writable({});
 export const popupOpen = writable(false);
 export const error = writable();
 
-export const tasks = writable([]);
+export const badges = writable([]);
 
-export const user_tasks = derived([tasks, user], ([$tasks, $user]) => {
-  let logged_in_user_tasks = [];
+export const user_badges = derived([badges , user], ([$badges, $user]) => {
+  let logged_in_user_badges = [];
 
   if ($user && $user.email) {
-    logged_in_user_tasks = $tasks.filter((task) => task.user === $user.email);
+    logged_in_user_badges = $badges.filter((task) => task.user === $user.email);
   }
 
-  return logged_in_user_tasks;
+  return logged_in_user_badges;
 });

@@ -3,8 +3,39 @@
 	import { fade } from "svelte/transition";
 	import Key from "../lib/icon.png"
 
+	import { isAuthenticated, user, user_badges, badges } from '../store';
+	
+	import { onMount } from "svelte";
+    import auth from "../authService";
+    let auth0Client;
+    let newTask;
+  
+    onMount(async () => {
+      auth0Client = await auth.createClient();
+  
+      isAuthenticated.set(await auth0Client.isAuthenticated());
+      user.set(await auth0Client.getUser());
+    });
+  
+    function login() {
+      auth.loginWithPopup(auth0Client);
+    }
+  
+    function logout() {
+      auth.logout(auth0Client);
+    }
+  
+    function genRandom(length = 7) {
+      var chars =
+        "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var result = "";
+      for (var i = length; i > 0; --i)
+        result += chars[Math.round(Math.random() * (chars.length - 1))];
+      return result;
+    }
+
 </script>
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
@@ -26,6 +57,7 @@
 		<!-- / -->
 		
 		<div class="flex justify-end space-x-2">
+			{#if $isAuthenticated}
 			<a
 				class="btn variant-filled"
 				on:click={() => goto('/tutorial')}
@@ -34,6 +66,15 @@
 			>
 				Get Started
 			</a>
+			{:else} 
+			<a
+				class="btn variant-filled"
+				on:click="{login}"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Login
+			</a>{/if}
 		</div>
 		
 

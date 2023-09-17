@@ -8,6 +8,8 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
+	import { isAuthenticated, user, user_badges, badges } from '../store';
+	import App from '../App.svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
@@ -22,22 +24,6 @@
 			<!--<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/skeletonlabs/skeleton"
 					target="_blank"
 					rel="noreferrer"
@@ -46,15 +32,22 @@
 				</a>
 			</svelte:fragment> -->
 			<svelte:fragment slot="trail">
+				
 				<LightSwitch />
 
-				<p>Hello Ty!</p>
+				<!--<p>Hello Ty!</p>
 				<Avatar
 					class="avatar w-8 h-8"
 					src="https://avatars.githubusercontent.com/u/8199998?v=4"
 					alt="User Avatar"
 					on:click={() => goto('/profile')}
-				/>	
+				/> -->
+				
+				<div class="navbar-nav mr-auto user-details">
+					{#if $isAuthenticated}
+					<span class="text">&nbsp;&nbsp;{$user.name} ({$user.email})</span>
+						{:else}<span>Not logged in</span>{/if}
+				</div>
 			</svelte:fragment>		
 		</AppBar>
 	</svelte:fragment>
