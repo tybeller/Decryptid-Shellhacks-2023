@@ -29,10 +29,12 @@
 
     const winToast = {
         message: 'You got it!',
+        position: 'bottom-middle',
     }
 
     const loseToast = {
-        message: 'Nope, try again!'
+        message: 'Nope, try again!',
+        position: 'bottom-middle'
     }
 
     let inputcaesar = '';
