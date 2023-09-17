@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar, Avatar, LightSwitch } from '@skeletonlabs/skeleton';
+	import { AppShell, Toast, AppBar, Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 
 	import { fade } from 'svelte/transition';
 
@@ -9,8 +9,12 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	import { initializeStores } from '@skeletonlabs/skeleton';
+	initializeStores();
+
 </script>
 
+<Toast />
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">

@@ -24,11 +24,43 @@
 
     $: caesarOutput = caesarCipher(caesarInput, cypherOffset);
 
+    import { getToastStore } from "@skeletonlabs/skeleton";
+    const toastStore = getToastStore();
+
+    const winToast = {
+        message: 'You got it!',
+    }
+
+    const loseToast = {
+        message: 'Nope, try again!'
+    }
+
+    let inputcaesar = '';
+
+    function buttonTest() {
+    if (inputcaesar === 'SHELLHACKS') {
+        toastStore.trigger(winToast);
+        }
+    else {
+            toastStore.trigger(loseToast);
+        }
+    }
+
+    // function buttonTest() {
+    //     let input = document.getElementById("inputcaesar");
+    //     if (input === 'SHELLHACKS') {
+    //         toastStore.trigger(winToast);
+    //     }
+    //     else {
+    //         toastStore.trigger(loseToast);
+    //     }
+    // }
+
 </script>
 
 <!-- tailwind grid with -->
 <div class="grid m-5">
-    <h1 class="h1 m-5">Caesar Cypher</h1>
+    <h1 class="h1 m-5">Caesar Cipher</h1>
     <hr />
     <p class="p mx-5 my-2 text-lg">Long ago, the Roman emperor Julius Caesar wrote letters with sensitive information to friends and foes alike.</p>
 
@@ -54,10 +86,10 @@
         </div>
     </section>
 
-    <p class="p m-5 text-xl">It’s time for a little reverse engineering. Use the caesarian cypher tool above to decrypt the word <b>VZDPSKDFNV</b> and enter your result below.</p>
+    <p class="p m-5 text-xl">It’s time for a little reverse engineering. Use the caesarian cypher tool above to decrypt the word <b>VKHOOKDFNV</b> and enter your result below.</p>
 
     <div class="flex justify-center">
-        <input type="text" class="input mx-2 my-5 w-60 px-2.5 py-2.5 rounded border text-2xl" placeholder="Answer" />
-        <button type="button" class="btn mx-2 my-5 btn-lg variant-filled">Try</button>
+        <input type="text" bind:value={inputcaesar} class="input mx-2 my-5 w-60 px-2.5 py-2.5 rounded border text-2xl" placeholder="Answer" />
+        <button type="button" on:click={buttonTest} class="btn mx-2 my-5 btn-lg variant-filled">Try</button>
     </div>
 </div>
