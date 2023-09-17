@@ -5,6 +5,7 @@
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { goto } from '$app/navigation';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
@@ -50,7 +51,7 @@
 					class="avatar w-8 h-8"
 					src="https://avatars.githubusercontent.com/u/8199998?v=4"
 					alt="User Avatar"
-					on:click={() => href('/profile')}
+					on:click={() => goto('/profile')}
 				/>	
 			</svelte:fragment>		
 		</AppBar>
