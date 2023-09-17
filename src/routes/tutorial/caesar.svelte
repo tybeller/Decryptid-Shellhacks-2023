@@ -29,14 +29,15 @@
 <!-- tailwind grid with -->
 <div class="grid m-5">
     <h1 class="h1 m-5">Caesar Cypher</h1>
+    <hr />
     <p class="p mx-5 my-2 text-lg">Long ago, the Roman emperor Julius Caesar wrote letters with sensitive information to friends and foes alike.</p>
 
     <p class="p mx-5 my-2 text-lg">To hide it from prying eyes, he replaced every letter in a given word with another letter several positions down the alphabet.</p>
         
     <p class="p mx-5 my-2 text-lg">This is known as a <b>mono-alphabetic substitution cipher</b>, or simply a <b>shift</b>.</p>
 
-    <section class="card w-half mx-20 my-5 p-5">
-        <div class="grid grid-cols-3 grid-row-3">
+    <section class="card w-half mx-40 my-5 p-5">
+        <div class="grid grid-cols-3 grid-row-3 h-60 w-160">
             <div class="w-50% mr-4 col-span-2 row-span-2 m-3">
                 <textarea class="textarea uppercase w-full px-3 py-2.5 rounded boarder text-2xl" bind:value={caesarInput} type="text" placeholder="Input"></textarea>
             </div> 
@@ -53,6 +54,10 @@
         </div>
     </section>
 
-    <p class="p m-5">It’s time for a little reverse engineering. Use the Caesar Cipher tool above to decrypt the word “ZDHTWOHJRZ” and enter your result below.</p>
+    <p class="p m-5 text-xl">It’s time for a little reverse engineering. Use the caesarian cypher tool above to decrypt the word <b>VZDPSKDFNV</b> and enter your result below.</p>
 
+    <div class="flex justify-center">
+        <input type="text" class="input mx-2 my-5 w-60 px-2.5 py-2.5 rounded border text-2xl" placeholder="Answer" />
+        <button type="button" class="btn mx-2 my-5 btn-lg variant-filled">Try</button>
+    </div>
 </div>
