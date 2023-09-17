@@ -27,10 +27,15 @@
 </script>
 
 <!-- tailwind grid with -->
-<div class="grid">
-    <h1 class="h1">Caesar Cypher</h1>
+<div class="grid m-5">
+    <h1 class="h1 m-5">Caesar Cypher</h1>
+    <p class="p mx-5 my-2 text-lg">Long ago, the Roman emperor Julius Caesar wrote letters with sensitive information to friends and foes alike.</p>
 
-    <section class="card w-half m-10 p-5">
+    <p class="p mx-5 my-2 text-lg">To hide it from prying eyes, he replaced every letter in a given word with another letter several positions down the alphabet.</p>
+        
+    <p class="p mx-5 my-2 text-lg">This is known as a <b>mono-alphabetic substitution cipher</b>, or simply a <b>shift</b>.</p>
+
+    <section class="card w-half mx-20 my-5 p-5">
         <div class="grid grid-cols-3 grid-row-3">
             <div class="w-50% mr-4 col-span-2 row-span-2 m-3">
                 <textarea class="textarea uppercase w-full px-3 py-2.5 rounded boarder text-2xl" bind:value={caesarInput} type="text" placeholder="Input"></textarea>
@@ -47,5 +52,7 @@
             </div>
         </div>
     </section>
+
+    <p class="p m-5">It’s time for a little reverse engineering. Use the Caesar Cipher tool above to decrypt the word “ZDHTWOHJRZ” and enter your result below.</p>
 
 </div>

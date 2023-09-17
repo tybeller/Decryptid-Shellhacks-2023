@@ -10,8 +10,9 @@
 
 </script>
 
-<Caesar />
-
+<div class="mx-50">
+    <Caesar />
+</div>
 <!--
 <svelte:window bind:scrollY={y} />
 <ProgressBar label="Progress Bar" value={y} max={scrollbarHeight} />
